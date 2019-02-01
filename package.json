@@ -1,0 +1,34 @@
+{
+  "name": "DestinyChildMootScraper",
+  "version": "0.1.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "bufferutil": "^3.0.2",
+    "checksum": "^0.1.1",
+    "cheerio": "^1.0.0-rc.2",
+    "empty": "^0.10.1",
+    "express": "^4.16.3",
+    "isset": "^1.0.4",
+    "md5": "^2.2.1",
+    "mysql": "^2.16.0",
+    "node-env-file": "^0.1.8",
+    "opusscript": "^0.0.3",
+    "path": "^0.12.7",
+    "promise": "^8.0.2",
+    "promises-all": "^1.0.0",
+    "random-string": "^0.2.0",
+    "request": "^2.88.0",
+    "restler": "^3.4.0",
+    "sync-request": "^6.0.0",
+    "uptimer": "^0.1.2",
+    "uws": "^8.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm install && node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AH.G",
+  "license": "ISC"
+}
