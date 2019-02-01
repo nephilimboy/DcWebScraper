@@ -2,7 +2,7 @@
 
 This bot synchronises the Discord channel with https://moot.us web site (```the moot.us does not support Rss or api to notify 
 new events```) 
-### Requirement and Pros
+### Requirement
 * NodeJs
 * Mysql Database (for saving the latest events)
 
