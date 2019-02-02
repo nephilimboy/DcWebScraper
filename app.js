@@ -5,20 +5,23 @@ var sreq = require('sync-request');
 const $ = require('cheerio');
 var is_connected_to_db = false;
 
+const pathNoteChannelWebhook = 'xxxxxxxx';
+const eventChannelWebhook = 'xxxxxxxx';
+
 const patchNoteUrl = "https://moot.us/lounges/73/boards/288";
 const eventUrl = "https://moot.us/lounges/73/boards/281";
-const webhookUrl = "xxxxxxxxxxxxxxx";
-const webhookImg = "https://cdn.discordapp.com/attachments/476969405910089730/540991094209642498/kisspng-destiny-child-video-games-shift-up-corporation-the-big-imageboard-tbib-bodysuit-davi-destiny.png";
+const webhookImg = "https://cdn.discordapp.com/attachments/476969405910089730/541161263074508800/davi__destiny_child_by_lataedelan_dapyh3v-pre.png";
 const webhookName = "Davi";
 
 
-const DB_schema_name = 'dcEvents';
+const DB_schema_name = "xxxxxxxx";
 const con = mysql.createConnection({
-    host: "xxxxxx",
-    user: "xxxxxx",
-    password: "xxxxxxxxx",
+    host: "xxxxxxxx",
+    user: "xxxxxxxx",
+    password: "xxxxxxxx",
     charset: 'utf8mb4'
 });
+
 
 var App = {
 
@@ -102,7 +105,7 @@ var App = {
                                             "avatar_url": webhookImg,
                                             "content": "***" + evtName + "***"
                                         }
-                                        var res = sreq('POST', webhookUrl, {
+                                        var res = sreq('POST', eventChannelWebhook, {
                                             json: jsonData,
                                         });
 
@@ -112,7 +115,7 @@ var App = {
                                             "avatar_url": webhookImg,
                                             "content": eventPostUrl
                                         }
-                                        var res = sreq('POST', webhookUrl, {
+                                        var res = sreq('POST', eventChannelWebhook, {
                                             json: jsonData,
                                         });
 
@@ -151,7 +154,7 @@ var App = {
                                                     "avatar_url": webhookImg,
                                                     "content": el
                                                 }
-                                                var res = sreq('POST', webhookUrl, {
+                                                var res = sreq('POST', eventChannelWebhook, {
                                                     json: jsonData,
                                                 });
                                             })
@@ -207,7 +210,7 @@ var App = {
                                             "avatar_url": webhookImg,
                                             "content": "***" + patchName + "***"
                                         }
-                                        var res = sreq('POST', webhookUrl, {
+                                        var res = sreq('POST', pathNoteChannelWebhook, {
                                             json: jsonData,
                                         });
 
@@ -217,7 +220,7 @@ var App = {
                                             "avatar_url": webhookImg,
                                             "content": pathNotePostUrl
                                         }
-                                        var res = sreq('POST', webhookUrl, {
+                                        var res = sreq('POST', pathNoteChannelWebhook, {
                                             json: jsonData,
                                         });
 
@@ -256,9 +259,10 @@ var App = {
                                                     "avatar_url": webhookImg,
                                                     "content": el
                                                 }
-                                                var res = sreq('POST', webhookUrl, {
+                                                var res = sreq('POST', pathNoteChannelWebhook, {
                                                     json: jsonData,
                                                 });
+
                                             })
                                         });
 
@@ -297,6 +301,7 @@ var App = {
                         });
 
                     });
+                    console.log("keep alive")
                 }, 20000);
             }
         });
